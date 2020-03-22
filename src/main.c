@@ -7,10 +7,10 @@ GtkEntryBuffer *termBuffer = NULL;
 
 int main( int argc, char *argv[] )
 {
-	GtkBuilder      *builder;
-	GtkWidget       *window;
+	GtkBuilder *builder;
+	GtkWidget *window;
 
-	termBuffer = gtk_entry_buffer_new( "Fuck you bitch!!!!!!!!!\n", 20 );
+	termBuffer = gtk_entry_buffer_new( "You just pressed a buttion!\n", 20 );
 
 	gtk_init( &argc, &argv );
 
@@ -31,7 +31,7 @@ int main( int argc, char *argv[] )
 void on_action()
 {
 	printf( "Old text: %s\n", gtk_entry_buffer_get_text( termBuffer ) );
-	gtk_entry_buffer_set_text( termBuffer, "Fuck you bitch!!!!!!!!!\n", 20 );
+	gtk_entry_buffer_set_text( termBuffer, "You just pressed a buttion!\n", 20 );
 	printf( "New text: %s\n", gtk_entry_buffer_get_text( termBuffer ) );
 }
 
