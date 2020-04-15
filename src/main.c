@@ -1,5 +1,3 @@
-//https://prognotes.net/2019/12/qt-widgets-application-project-structure/
-
 #include <gtk/gtk.h>
 #include <stdio.h>
 
@@ -10,12 +8,12 @@ int main( int argc, char *argv[] )
 	GtkBuilder *builder;
 	GtkWidget *window;
 
-	termBuffer = gtk_entry_buffer_new( "You just pressed a buttion!\n", 20 );
+	termBuffer = gtk_entry_buffer_new( "You just pressed a button!\n", 20 );
 
 	gtk_init( &argc, &argv );
 
 	builder = gtk_builder_new();
-	gtk_builder_add_from_file( builder, "window_main.glade", NULL );
+	gtk_builder_add_from_file( builder, "ui/window_main.glade", NULL );
 
 	window = GTK_WIDGET( gtk_builder_get_object( builder, "window_main" ) );
 	gtk_builder_connect_signals( builder, NULL );
@@ -31,7 +29,7 @@ int main( int argc, char *argv[] )
 void on_action()
 {
 	printf( "Old text: %s\n", gtk_entry_buffer_get_text( termBuffer ) );
-	gtk_entry_buffer_set_text( termBuffer, "You just pressed a buttion!\n", 20 );
+	gtk_entry_buffer_set_text( termBuffer, "You just pressed a button!\n", 20 );
 	printf( "New text: %s\n", gtk_entry_buffer_get_text( termBuffer ) );
 }
 
